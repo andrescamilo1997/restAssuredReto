@@ -1,6 +1,5 @@
 package co.com.sofka.runner;
 
-
 import io.cucumber.junit.Cucumber;
 import io.cucumber.junit.CucumberOptions;
 import org.junit.runner.RunWith;
@@ -9,9 +8,9 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         publish = true,
-        features = {"src/test/resources/features/put_user.feature"},
+        features = {"src/test/resources/features/login_single_user.feature"},
         glue = {"co.com.sofka.stepDefinitions"}
 )
 
-public class UpdateUserRunner {
+public class LoginSingleUserRunner {
 }

@@ -9,6 +9,14 @@ public class servicesSetUp {
     private static final String BASE_URI = "https://reqres.in";
     private static final String BASE_PATH = "/api";
     protected static final String BASE_TO_GET = "/users/2";
+    protected static final String BASE_LOGIN_RESOURCE = "/login";
+    protected static final String BASE_TO_REGISTER ="/register";
+    protected static final String BASE_TO_GET_NOT_FOUND ="/users/23";
+    protected static final String BASE_TO_GET_LIST = "/users?page=2";
+    protected static final String UBI_ARCH_JSON_LOGIN ="src/test/resources/files/login.json";
+    protected static final String UBI_ARCH_JSON_LOGIN_UNSUCCES ="src/test/resources/files/loginunsuccessful.json";
+    protected static final String UBI_ARCH_JSON_REGISTER ="src/test/resources/files/register.json";
+    protected static final String UBI_ARCH_JSON_REGISTER_UNSUCCES ="src/test/resources/files/registerunsuccessful.json";
 
     protected void generalSetUp(){
         log4j2();
