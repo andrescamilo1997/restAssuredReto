@@ -58,12 +58,11 @@ public class LoginUnsuccessPutStepDefinition extends servicesSetUp {
     public void elClientePideEditarAlgunoDeSusDatosY(String identificacion, String trabajo) {
         try{
             generalSetUp();
+            UseJsonFormatToString useJsonFormatToString = new
+                    UseJsonFormatToString(identificacion, trabajo, UBI_ARCH_JSON_PUT);
             request = given()
                     .contentType(ContentType.JSON)
-                    .body("{\n" +
-                            "    \"name\": \""+identificacion+"\",\n" +
-                            "    \"job\": \""+trabajo+"\"\n" +
-                            "}");
+                    .body(useJsonFormatToString.bodyPut());
         }catch (Exception e){
             LOGGER.error(e.getMessage());
             Assertions.fail(e.getMessage());

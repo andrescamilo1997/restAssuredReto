@@ -17,6 +17,8 @@ public class servicesSetUp {
     protected static final String UBI_ARCH_JSON_LOGIN_UNSUCCES ="src/test/resources/files/loginunsuccessful.json";
     protected static final String UBI_ARCH_JSON_REGISTER ="src/test/resources/files/register.json";
     protected static final String UBI_ARCH_JSON_REGISTER_UNSUCCES ="src/test/resources/files/registerunsuccessful.json";
+    protected static final String UBI_ARCH_JSON_PUT ="src/test/resources/files/put.json";
+
 
     protected void generalSetUp(){
         log4j2();

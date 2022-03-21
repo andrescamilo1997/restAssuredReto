@@ -3,7 +3,9 @@ package co.com.sofka.util;
 public enum LoginKey {
 
     USER("[email]"),
-    PASSWORD("[password]");
+    PASSWORD("[password]"),
+    NAME("[NAME]"),
+    JOB("[JOB]");
 
     private final String value;
 
