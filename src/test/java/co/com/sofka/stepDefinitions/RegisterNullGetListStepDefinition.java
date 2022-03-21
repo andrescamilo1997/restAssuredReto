@@ -25,12 +25,15 @@ public class RegisterNullGetListStepDefinition  extends servicesSetUp {
     public void comoAdministradorSePonenLasCredencialesDelUsuarioComoElEmailPeroNoPassword(String email) {
         try{
             generalSetUp();
-            UseJsonFormatToString useJsonFormatToString  = new UseJsonFormatToString(email,UBI_ARCH_JSON_REGISTER_UNSUCCES);
+
+            UseJsonFormatToString useJsonFormatToString  =
+                    new UseJsonFormatToString(email, ARCH_JSON_REGISTER_UNSUCCESSFUL);
+
             request = given()
                     .contentType(ContentType.JSON)
                     .log()
                     .all()
-                    .body(useJsonFormatToString.bodyNotSucced());
+                    .body(useJsonFormatToString.bodyNotSucceed());
         }catch (Exception e){
             LOGGER.warn(e.getMessage());
             Assertions.fail(e.getMessage());

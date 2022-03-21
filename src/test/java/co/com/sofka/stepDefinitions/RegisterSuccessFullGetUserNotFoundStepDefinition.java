@@ -15,9 +15,9 @@ import org.junit.jupiter.api.Assertions;
 import static io.restassured.RestAssured.given;
 
 
-public class RegisterSuccesFullGetUserNotFoundStepDefinition extends servicesSetUp {
+public class RegisterSuccessFullGetUserNotFoundStepDefinition extends servicesSetUp {
 
-    private static final Logger LOGGER = Logger.getLogger(RegisterSuccesFullGetUserNotFoundStepDefinition.class);
+    private static final Logger LOGGER = Logger.getLogger(RegisterSuccessFullGetUserNotFoundStepDefinition.class);
     private Response response;
     private RequestSpecification request;
 
@@ -27,7 +27,7 @@ public class RegisterSuccesFullGetUserNotFoundStepDefinition extends servicesSet
         try{
             generalSetUp();
             UseJsonFormatToString useJsonFormatToString
-                    = new UseJsonFormatToString(email,password,UBI_ARCH_JSON_REGISTER);
+                    = new UseJsonFormatToString(email,password, ARCH_JSON_REGISTER);
 
             request = given()
                     .contentType(ContentType.JSON)

@@ -22,18 +22,18 @@ public class LoginUnsuccessPutStepDefinition extends servicesSetUp {
 
     //Login UnsuccessFull
     @Given("El usuario ingresa su {string} pero no su contracenia")
-    public void elUsuarioIngresaSuPeroNoSuContracenia(String correo) {
+    public void elUsuarioIngresaSuPeroNoSuContracenia(String email) {
         try{
             generalSetUp();
 
-            UseJsonFormatToString useJsonFormatToString = new
-                    UseJsonFormatToString(correo, UBI_ARCH_JSON_LOGIN_UNSUCCES);
+            UseJsonFormatToString useJsonFormatToString =
+                    new UseJsonFormatToString(email, ARCH_JSON_LOGIN_UNSUCCESSFUL);
 
             request = given()
                     .contentType(ContentType.JSON)
                     .log()
                     .all()
-                    .body(useJsonFormatToString.bodyNotSucced());
+                    .body(useJsonFormatToString.bodyNotSucceed());
 
         }catch (Exception e){
             LOGGER.error(e.getMessage(), e);
@@ -55,11 +55,11 @@ public class LoginUnsuccessPutStepDefinition extends servicesSetUp {
 
     //put
     @Given("el cliente pide editar alguno de sus datos {string} y {string}")
-    public void elClientePideEditarAlgunoDeSusDatosY(String identificacion, String trabajo) {
+    public void elClientePideEditarAlgunoDeSusDatosY(String id, String job) {
         try{
             generalSetUp();
             UseJsonFormatToString useJsonFormatToString = new
-                    UseJsonFormatToString(identificacion, trabajo, UBI_ARCH_JSON_PUT);
+                    UseJsonFormatToString(id, job, ARCH_JSON_PUT);
             request = given()
                     .contentType(ContentType.JSON)
                     .body(useJsonFormatToString.bodyPut());
@@ -85,8 +85,7 @@ public class LoginUnsuccessPutStepDefinition extends servicesSetUp {
                     .statusCode(HttpStatus.SC_OK)
                     .log()
                     .all()
-                    .body("name", notNullValue())
-            /*.body("name", equalTo("identificacion"))*/;
+                    .body("name", notNullValue());
 
         }catch (Exception e){
             LOGGER.error(e.getMessage());

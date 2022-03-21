@@ -23,12 +23,12 @@ public class LoginSingleUserStepDefinition extends servicesSetUp {
 
     //Login
     @Given(":  El usuario ingresa su {string} y {string}")
-    public void elUsuarioIngresaSuY(String correo, String contrasenia) {
+    public void elUsuarioIngresaSuY(String email, String password) {
         try{
             generalSetUp();
 
-            UseJsonFormatToString useJsonFormatToString = new
-                    UseJsonFormatToString(correo, contrasenia, UBI_ARCH_JSON_LOGIN);
+            UseJsonFormatToString useJsonFormatToString =
+                    new UseJsonFormatToString(email, password, ARCH_JSON_LOGIN);
 
             request = given()
                     .contentType(ContentType.JSON)

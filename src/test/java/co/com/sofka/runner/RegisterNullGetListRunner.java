@@ -9,7 +9,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         publish = true,
-        features = {"src/test/resources/features/register_unsuccesful_get_list.feature"},
+        features = {"src/test/resources/features/register_unsuccessful_get_list.feature"},
         glue = {"co.com.sofka.stepDefinitions"}
 )
 

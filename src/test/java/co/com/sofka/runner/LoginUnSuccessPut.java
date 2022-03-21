@@ -8,7 +8,7 @@ import org.junit.runner.RunWith;
 @CucumberOptions(
         snippets = CucumberOptions.SnippetType.CAMELCASE,
         publish = true,
-        features = {"src/test/resources/features/login_unsucces_put.feature"},
+        features = {"src/test/resources/features/login_unsuccessful_put.feature"},
         glue = {"co.com.sofka.stepDefinitions"}
 )
 

@@ -13,17 +13,22 @@ public class servicesSetUp {
     protected static final String BASE_TO_REGISTER ="/register";
     protected static final String BASE_TO_GET_NOT_FOUND ="/users/23";
     protected static final String BASE_TO_GET_LIST = "/users?page=2";
-    protected static final String UBI_ARCH_JSON_LOGIN ="src/test/resources/files/login.json";
-    protected static final String UBI_ARCH_JSON_LOGIN_UNSUCCES ="src/test/resources/files/loginunsuccessful.json";
-    protected static final String UBI_ARCH_JSON_REGISTER ="src/test/resources/files/register.json";
-    protected static final String UBI_ARCH_JSON_REGISTER_UNSUCCES ="src/test/resources/files/registerunsuccessful.json";
-    protected static final String UBI_ARCH_JSON_PUT ="src/test/resources/files/put.json";
+    //Location files Json
+    protected static final String ARCH_JSON_LOGIN
+            ="src/test/resources/files/login.json";
+    protected static final String ARCH_JSON_LOGIN_UNSUCCESSFUL
+            ="src/test/resources/files/login_unsuccessful.json";
+    protected static final String ARCH_JSON_REGISTER
+            ="src/test/resources/files/register.json";
+    protected static final String ARCH_JSON_REGISTER_UNSUCCESSFUL
+            ="src/test/resources/files/register_unsuccessful.json";
+    protected static final String ARCH_JSON_PUT
+            ="src/test/resources/files/put.json";
 
 
     protected void generalSetUp(){
         log4j2();
         setUpBases();
-
     }
 
     protected void log4j2(){

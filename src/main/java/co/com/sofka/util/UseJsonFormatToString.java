@@ -11,37 +11,37 @@ import static co.com.sofka.util.LoginKey.*;
 
 public class UseJsonFormatToString {
     private final String changeJson;
-    private final String email;
+    private final String emailOrName;
     private String password;
     private Object ob;
     private JSONObject js;
     private String todoJson;
 
-    public UseJsonFormatToString(String email, String password, String changeJson) {
-        this.email = email;
+    public UseJsonFormatToString(String emailOrName, String password, String changeJson) {
+        this.emailOrName = emailOrName;
         this.password = password;
         this.changeJson = changeJson;
     }
 
-    public UseJsonFormatToString(String email,String changeJson) {
-        this.email = email;
+    public UseJsonFormatToString(String emailOrName,String changeJson) {
+        this.emailOrName = emailOrName;
         this.changeJson = changeJson;
     }
 
 
 
-    public String bodyNotSucced() throws IOException, ParseException {
+    public String bodyNotSucceed() throws IOException, ParseException {
         ob = new JSONParser().parse(new FileReader(changeJson));
         js = (JSONObject) ob;
         todoJson = JSONObject.toJSONString(js);
-        return todoJson.replace(USER.getValue(), email);
+        return todoJson.replace(USER.getValue(), emailOrName);
     }
 
     public String bodyPut() throws IOException, ParseException {
         ob = new JSONParser().parse(new FileReader(changeJson));
         js = (JSONObject) ob;
         todoJson = JSONObject.toJSONString(js);
-        String a = todoJson.replace(NAME.getValue(), email);
+        String a = todoJson.replace(NAME.getValue(), emailOrName);
         return a.replace(JOB.getValue(), password);
     }
 
@@ -49,7 +49,7 @@ public class UseJsonFormatToString {
         ob = new JSONParser().parse(new FileReader(changeJson));
         js = (JSONObject) ob;
         todoJson = JSONObject.toJSONString(js);
-        String a = todoJson.replace(USER.getValue(), email);
+        String a = todoJson.replace(USER.getValue(), emailOrName);
         return a.replace(PASSWORD.getValue(), password);
     }
 }

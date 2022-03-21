@@ -12,6 +12,6 @@ import org.junit.runner.RunWith;
         glue = {"co.com.sofka.stepDefinitions"}
 )
 
-public class RegisterSuccesfullGetUserNotFoundRunner {
+public class RegisterSuccessfulGetUserNotFoundRunner {
 
 }
